@@ -15,27 +15,37 @@
 
     // body.jade compiled template
     templatizer["body"] = function tmpl_body() {
-        return '<body><div class="navbar navbar-default"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">Vicarius</a></div><div class="collapse navbar-collapse"><ul class="nav navbar-nav"><li><a href="#Configuration">Configuration</a></li><li><a href="#Intercept">Intercept</a></li><li class="active"><a href="#History">History</a></li></ul></div></div></div><div class="container"><main role="page-container"></main></div></body>';
+        return '<body><div class="container"><div class="navbar navbar-default navLogo"><ul class="nav navbar-nav"><li><a href="javascript:if($(\'#navBarHideButton\').attr(\'data-autoHide\')===\'hide\'){$(\'#rootNavbar\').hide();$(\'#navBarHideButton\').attr(\'data-autoHide\', \'show\');}else{$(\'#rootNavbar\').show();$(\'#navBarHideButton\').attr(\'data-autoHide\', \'hide\');}" data-autoHide="hide" id="navBarHideButton" class="vicariusLogo"><span class="glyphicon glyphicon-chevron-right"></span></a></li></ul></div><div id="rootNavbar" class="navbar navbar-default navMenu"><ul class="nav navbar-nav"><li><a href="Configuration">Configuration</a></li><li><a href="IDE">IDE</a></li><li><a href="History">History</a></li></ul></div><li role="rootContainer" id="rootContainer" class="httpExchangeLabels list-group-item rootContainer"><p class="httpExchangeLabel hostHeader">Host</p><div class="vr"></div><p class="httpExchangeLabel routeHeader">Route</p><div class="vr"></div><p class="httpExchangeLabel methodHeader">Method</p><div class="vr"></div><p class="httpExchangeLabel statusCodeHeader">Status</p><div class="vr"></div><p class="httpExchangeLabel responseLengthHeader">Length</p><div class="vr"></div><p class="httpExchangeLabel responseTimeHeader">Time</p></li></div><div class="container"><main role="page-container" class="main"></main></div></body>';
     };
 
     // head.jade compiled template
     templatizer["head"] = function tmpl_head() {
-        return '<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0"/><meta name="apple-mobile-web-app-capable" content="yes"/><head><title>#title</title><meta name="viewport" content="width=device-width"/><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><script src="http://listjs.com/no-cdn/list.js"></script><link rel="stylesheet" href="/public/css/prism.css"/></head>';
+        return '<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0"/><meta name="apple-mobile-web-app-capable" content="yes"/><head><title>#title</title><meta name="viewport" content="width=device-width"/><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/></head>';
     };
 
     // includes/httpExchangeItem.jade compiled template
     templatizer["includes"]["httpExchangeItem"] = function tmpl_includes_httpExchangeItem() {
-        return '<li class="httpExchangeElement list-group-item"><p role="route" class="httpExchangeLabel route"></p><p role="method" class="httpExchangeLabel method"></p><p role="statusCode" class="httpExchangeLabel statusCode"></p><p role="responseLength" class="httpExchangeLabel responseLength"></p><p role="responseTime" class="httpExchangeLabel responseTime"></p></li>';
+        return '<li role="rootContainer" class="httpExchangeElement list-group-item"><p role="host" class="httpExchangeLabel host"></p><div class="vr"></div><p role="route" class="httpExchangeLabel route"></p><div class="vr"></div><p role="method" class="httpExchangeLabel method"></p><div class="vr"></div><p role="statusCode" class="httpExchangeLabel statusCode"></p><div class="vr"></div><p role="responseLength" class="httpExchangeLabel responseLength"></p><div class="vr"></div><p role="responseTime" class="httpExchangeLabel responseTime"></p></li>';
+    };
+
+    // includes/httpExchangeLabels.jade compiled template
+    templatizer["includes"]["httpExchangeLabels"] = function tmpl_includes_httpExchangeLabels() {
+        return '<li role="rootContainer" class="httpExchangeElement list-group-item rootContainer"><p class="httpExchangeLabel hostHeader">Host</p><div class="vr"></div><p class="httpExchangeLabel routeHeader">Route</p><div class="vr"></div><p class="httpExchangeLabel methodHeader">Method</p><div class="vr"></div><p class="httpExchangeLabel statusCodeHeader">Status</p><div class="vr"></div><p class="httpExchangeLabel responseLengthHeader">Length</p><div class="vr"></div><p class="httpExchangeLabel responseTimeHeader">Time</p></li>';
     };
 
     // includes/httpExchangeSelectionDetails.jade compiled template
     templatizer["includes"]["httpExchangeSelectionDetails"] = function tmpl_includes_httpExchangeSelectionDetails() {
-        return '<div class="container"><div role="selectionTabs" class="container"><ul class="nav navbar-nav"><li class="active rawTab"><a href="#">Raw</a></li><li class="active bodyTab"><a href="#">Body</a></li><li class="active renderTab"><a href="#">Render</a></li><li class="active repeatTab"><a href="#">Repeat</a></li><li class="active fuzzTab"><a href="#">Fuzz</a></li></ul></div><div class="container"><div role="selectionViewPort" class="div selectionViewPort"><pre class="language-js"><code role="dataViewer" style="overflow: auto; overflow-x: hidden; height: 95%;" class="language-js"></code></pre></div></div></div>';
+        return '<div class="container"><div role="selectionTabs" class="container"><ul class="nav navbar-nav"><li class="active rawTab"><a href="#" class="coloredTab">Raw</a></li><li class="active bodyTab"><a href="#" class="coloredTab">Body</a></li><li class="active renderTab"><a href="#" class="coloredTab">Render</a></li></ul></div><div class="container"><div role="selectionViewPort" class="div selectionViewPort"><pre class="requestViewer language-http"><code role="requestViewer" class="requestViewer language-http"></code></pre><pre class="responseViewer language-http"><code role="responseViewer" class="responseViewer language-http"></code></pre></div></div></div>';
+    };
+
+    // pages/IDE.jade compiled template
+    templatizer["pages"]["IDE"] = function tmpl_pages_IDE() {
+        return '<section class="page IDE"><object data="http://127.0.0.1:9085" class="IDE"><embed src="http://127.0.0.1:9085" class="IDE"/>Error: IDE is not running. Please start IDE and try again.</object></section>';
     };
 
     // pages/history.jade compiled template
     templatizer["pages"]["history"] = function tmpl_pages_history() {
-        return '<section id="displaySelection" class="page history"><div id="historyLabels" class="container"><input type="text" class="fuzzy-search"/><ul id="httpExchangeList" role="httpExchangeList" style="width: 100%; height: 300px; overflow: auto" class="httpExchangeList list"></ul><hr/></div><div role="selectionDetailsView" id="selectionDetailsView" class="selectionDetailsView container"></div></section>';
+        return '<section id="displaySelection" class="page history"><div id="historyLabels" class="container"><div id="listContainer" class="div listContainer"><ul id="httpExchangeList" role="httpExchangeList" class="httpExchangeList list"></ul></div><div class="container"><div role="selectionDetailsView" id="selectionDetailsView" class="selectionDetailsView container"></div></div></div></section>';
     };
 
     return templatizer;

@@ -2,16 +2,14 @@
     .container(role='selectionTabs')
       ul.nav.navbar-nav
         li.active.rawTab
-          a(href='#') Raw
+          a.coloredTab(href='#') Raw
         li.active.bodyTab
-          a(href='#') Body
+          a.coloredTab(href='#') Body
         li.active.renderTab
-          a(href='#') Render
-        li.active.repeatTab
-          a(href='#') Repeat
-        li.active.fuzzTab
-          a(href='#') Fuzz
+          a.coloredTab(href='#') Render
     .container
       .div.selectionViewPort(role='selectionViewPort')
-       pre.language-js
-        code.language-js(role='dataViewer', style='overflow: auto; overflow-x: hidden; height: 95%;')
+       pre.requestViewer.language-http
+        code.requestViewer.language-http(role='requestViewer')
+       pre.responseViewer.language-http
+        code.responseViewer.language-http(role='responseViewer')

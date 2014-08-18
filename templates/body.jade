@@ -1,20 +1,31 @@
 body
-  .navbar.navbar-default
-      .container
-        .navbar-header
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='#') Vicarius
-        .collapse.navbar-collapse
-          ul.nav.navbar-nav
-            li
-              a(href='#Configuration') Configuration
-            li
-              a(href='#Intercept') Intercept
-            li.active
-              a(href='#History') History
   .container
-    main(role="page-container")
+    .navbar.navbar-default.navLogo
+     ul.nav.navbar-nav
+      li
+       a.vicariusLogo(href="javascript:if($('#navBarHideButton').attr('data-autoHide')==='hide'){$('#rootNavbar').hide();$('#navBarHideButton').attr('data-autoHide', 'show');}else{$('#rootNavbar').show();$('#navBarHideButton').attr('data-autoHide', 'hide');}", data-autoHide='hide', id='navBarHideButton')
+        span.glyphicon.glyphicon-chevron-right
+    .navbar.navbar-default.navMenu(id='rootNavbar')
+            ul.nav.navbar-nav
+              li
+                a(href='Configuration') Configuration
+              li
+                a(href='IDE') IDE
+              li
+                a(href='History') History
+    li.httpExchangeLabels.list-group-item.rootContainer(role='rootContainer', id='rootContainer')
+      p.httpExchangeLabel.hostHeader Host
+      div.vr
+      p.httpExchangeLabel.routeHeader Route
+      div.vr
+      p.httpExchangeLabel.methodHeader Method
+      div.vr
+      p.httpExchangeLabel.statusCodeHeader Status
+      div.vr
+      p.httpExchangeLabel.responseLengthHeader Length
+      div.vr
+      p.httpExchangeLabel.responseTimeHeader Time
+  .container
+    main.main(role="page-container")
+
+

@@ -1,0 +1,221 @@
+body, html {
+ height: 100%;
+ margin: 0px;
+ padding: 0px;
+ overflow: hidden;
+}
+.body {
+ height: 100vh;
+
+}
+.main {
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.navbar-nav > li > a {
+  padding-top:5px !important;
+  padding-bottom:5px !important;
+}
+.navbar {
+  min-height:32px !important;
+  margin-bottom: -2px !important;
+}
+
+
+.navbar.navbar-default.navMenu {
+  width: 105em;
+  border-left: none;
+  position:relative;
+  top: -1px;
+  right:-2em;
+}
+a.vicariusLogo {
+  margin-left:-10px;
+  padding-right:5px;
+}
+
+div.navbar.navbar-default.navLogo {
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  border-right: none;
+  width: 2em;
+}
+
+
+li.httpExchangeElement {
+  border-left: none;
+  border-right: none;
+}
+
+li.httpExchangeLabels {
+  border-left: none;
+  border-right: none;
+
+  z-index:2;
+}
+
+
+
+p.httpExchangeLabel{
+  color: #000;
+  display: inline-block;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  vertical-align: middle;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 20px;
+  margin: 0 auto;
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+ul.httpExchangeList {
+  color: #000;
+  margin: 0 auto;
+  height: 10em;
+  width: 100em;
+  margin-top:-4px;
+  overflow-x: hidden;
+  overflow-y: auto
+
+}
+li.selected {
+  background-color: #0099CC;
+  color: #FFF;
+}
+ li.selected > p.httpExchangeLabel {
+    color: #FFF;
+ }
+
+ a.coloredTab {
+  color: #0099CC !important;
+
+ }
+
+li.not-selected {
+    background-color: #FFF;
+    color: #000;
+}
+div.container {
+  width: 100vw;
+  padding: 1px;
+  margin-left: auto;
+  margin-right: auto;
+}
+  div.vr {
+    border-left:1px solid #D7D7D7;
+    position:absolute;
+    display: inline-block;
+    height:105%;
+    margin-top:-10px;
+    margin-bottom:-15px;
+  }
+
+  p.host {
+    width: 250px;
+  }
+  p.route {
+    width: 350px;
+  }
+  p.method {
+    width: 80px;
+  }
+  p.statusCode {
+    width: 80px;
+  }
+  p.responseLength {
+    width: 120px;
+  }
+  p.responseTime {
+    width: 150px;
+  }
+
+  p.hostHeader {
+    margin-left:4.7em;
+    width: 250px;
+  }
+  p.routeHeader {
+    width: 350px;
+  }
+  p.methodHeader {
+    width: 80px;
+  }
+  p.statusCodeHeader {
+    width: 80px;
+  }
+  p.responseLengthHeader {
+    width: 120px;
+  }
+  p.responseTimeHeader {
+    width: 150px;
+  }
+
+
+li.rootContainer {
+  margin-top:-2px;
+  height: 33px;
+  border-left: none;
+  border-right: none;
+}
+
+li.rootContainer > p {
+  margin-top: -5px;
+ height: 30px;
+}
+
+
+div.selectionViewPort {
+  height: 40em;
+  width: 100vw;
+  padding-left:10px;
+  padding-right:20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+code.requestViewer {
+  overflow-y: auto;
+  overflow-x: hidden;
+  float: left;
+  height: 40em;
+  width: 50em;
+}
+
+code.responseViewer {
+  overflow-y: auto;
+  overflow-x: hidden;
+  float: right;
+  height: 40em;
+  width: 50em;
+}
+pre.requestViewer {
+  overflow-y: auto;
+  overflow-x: hidden;
+  float: left;
+  height: 40em;
+  width: 50%;
+}
+
+pre.responseViewer {
+  overflow-y: auto;
+  overflow-x: hidden;
+  float: right;
+  height: 40em;
+  width: 50%;
+}
+
+object.IDE {
+height: 100em;
+width: 100vw;
+}
+embed.IDE {
+height: 100em;
+width: 100vw;
+}
+

@@ -1,6 +1,12 @@
-li.httpExchangeElement.list-group-item
-  p.httpExchangeLabel.route(role='route')
-  p.httpExchangeLabel.method(role='method')
-  p.httpExchangeLabel.statusCode(role='statusCode')
-  p.httpExchangeLabel.responseLength(role='responseLength')
-  p.httpExchangeLabel.responseTime(role='responseTime')
+li.httpExchangeElement.list-group-item(role='rootContainer')
+    p.httpExchangeLabel.host(role='host')
+    div.vr
+    p.httpExchangeLabel.route(role='route')
+    div.vr
+    p.httpExchangeLabel.method(role='method')
+    div.vr
+    p.httpExchangeLabel.statusCode(role='statusCode')
+    div.vr
+    p.httpExchangeLabel.responseLength(role='responseLength')
+    div.vr
+    p.httpExchangeLabel.responseTime(role='responseTime')
