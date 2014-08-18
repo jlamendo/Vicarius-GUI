@@ -7,6 +7,7 @@ var appDir = __dirname + '/client';
 var cssDir = __dirname + '/public/css';
 var logicDir = __dirname + '/client/logic';
 
+
 module.exports = {
     // Tell the Hapi server what URLs the application should be served from.
     // Since we're doing clientside routing we want to serve this from some type
@@ -29,16 +30,19 @@ module.exports = {
         // order you provide them. So for example, if you're using jQuery make sure
         // you list any plugins after jQuery itself.
         libraries: [
+            appDir + '/libraries/jquery.min.js',
+            appDir + '/libraries/bootstrap.min.js',
+            appDir + '/libraries/jquery.bootstrap-autohidingnavbar.js',
             appDir + '/libraries/zepto.js',
-            appDir + '/libraries/list.js',
-            appDir + '/libraries/list-fuzzySearch.js',
             appDir + '/libraries/prism.js',
+            appDir + '/libraries/iscroll.js',
         ],
         // Specify the stylesheets we want to bundle
         stylesheets: [
-            cssDir + '/bootstrap.css',
-            cssDir + '/vicarius.css',
+            cssDir + '/normalize.css',
+            cssDir + '/bootstrap.min.css',
             cssDir + '/prism.css',
+            cssDir + '/vicarius.css',
             cssDir + '/app.css',
         ],
         beforeBuildJS: function () {
@@ -61,6 +65,7 @@ module.exports = {
             // to talk to livereaload (http://livereload.com/) browser plugins for sneakily
             // refreshing styles without waiting for you to refresh or running/configuring
             // the live reload app.
+
             stylizer({
                 infile: cssDir + '/app.styl',
                 outfile: cssDir + '/app.css',

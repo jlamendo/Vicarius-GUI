@@ -1,5 +1,5 @@
 .container
-    .container(role='selectionTabs')
+    .container.detailsNav(role='selectionTabs')
       ul.nav.navbar-nav
         li.active.rawTab
           a.coloredTab(href='#') Raw
@@ -7,8 +7,9 @@
           a.coloredTab(href='#') Body
         li.active.renderTab
           a.coloredTab(href='#') Render
+    .resizeBar(data-target='selectionDetailsView', role='resizeBar')
     .container
-      .div.selectionViewPort(role='selectionViewPort')
+      .div.selectionViewPort(role='selectionViewPort',id='selectionViewPort')
        pre.requestViewer.language-http
         code.requestViewer.language-http(role='requestViewer')
        pre.responseViewer.language-http

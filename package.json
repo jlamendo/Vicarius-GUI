@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "main": "server.js",
   "dependencies": {
-    "ampersand-model": "2.x.x",
-    "ampersand-rest-collection": "^1.0.4",
+     "ampersand-model": "2.x.x",
+    "ampersand-rest-collection": "1.x.x",
     "ampersand-router": "0.x.x",
     "ampersand-view": "4.x.x",
     "ampersand-view-switcher": "0.x.x",

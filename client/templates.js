@@ -35,7 +35,7 @@
 
     // includes/httpExchangeSelectionDetails.jade compiled template
     templatizer["includes"]["httpExchangeSelectionDetails"] = function tmpl_includes_httpExchangeSelectionDetails() {
-        return '<div class="container"><div role="selectionTabs" class="container"><ul class="nav navbar-nav"><li class="active rawTab"><a href="#" class="coloredTab">Raw</a></li><li class="active bodyTab"><a href="#" class="coloredTab">Body</a></li><li class="active renderTab"><a href="#" class="coloredTab">Render</a></li></ul></div><div class="container"><div role="selectionViewPort" class="div selectionViewPort"><pre class="requestViewer language-http"><code role="requestViewer" class="requestViewer language-http"></code></pre><pre class="responseViewer language-http"><code role="responseViewer" class="responseViewer language-http"></code></pre></div></div></div>';
+        return '<div class="container"><div role="selectionTabs" class="container detailsNav"><ul class="nav navbar-nav"><li class="active rawTab"><a href="#" class="coloredTab">Raw</a></li><li class="active bodyTab"><a href="#" class="coloredTab">Body</a></li><li class="active renderTab"><a href="#" class="coloredTab">Render</a></li></ul></div><div data-target="selectionDetailsView" role="resizeBar" class="resizeBar"></div><div class="container"><div role="selectionViewPort" id="selectionViewPort" class="div selectionViewPort"><pre class="requestViewer language-http"><code role="requestViewer" class="requestViewer language-http"></code></pre><pre class="responseViewer language-http"><code role="responseViewer" class="responseViewer language-http"></code></pre></div></div></div>';
     };
 
     // pages/IDE.jade compiled template
@@ -45,7 +45,7 @@
 
     // pages/history.jade compiled template
     templatizer["pages"]["history"] = function tmpl_pages_history() {
-        return '<section id="displaySelection" class="page history"><div id="historyLabels" class="container"><div id="listContainer" class="div listContainer"><ul id="httpExchangeList" role="httpExchangeList" class="httpExchangeList list"></ul></div><div class="container"><div role="selectionDetailsView" id="selectionDetailsView" class="selectionDetailsView container"></div></div></div></section>';
+        return '<section id="displaySelection" class="page history"><div id="historyLabels" class="container"><div class="div fill-height-or-more"><div id="listContainer" class="div listContainer"><ul id="httpExchangeList" role="httpExchangeList" class="httpExchangeList list"></ul></div></div><div role="selectionDetailsView" id="selectionDetailsView" class="selectionDetailsView container"></div></div></section>';
     };
 
     return templatizer;

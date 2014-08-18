@@ -14,6 +14,68 @@ body, html {
 }
 
 
+
+.fill-height-or-more {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.fill-height-or-more > div {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.noSelect{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.detailsNav{
+background-color: #FFF;
+margin-bottom: -1em;
+margin-top: -1px;
+height: 2.6em;
+}
+li.bodyTab{
+background-color: #FFF;
+}
+li.renderTab{
+background-color: #FFF;
+}
+
 .navbar-nav > li > a {
   padding-top:5px !important;
   padding-bottom:5px !important;
@@ -78,11 +140,14 @@ p.httpExchangeLabel{
 ul.httpExchangeList {
   color: #000;
   margin: 0 auto;
-  height: 10em;
-  width: 100em;
+  margin-left: -2.9em;
+  margin-right: 0;
+  width: 103vw;
   margin-top:-4px;
+  max-height: 36em;
   overflow-x: hidden;
   overflow-y: auto
+  position: absolute;
 
 }
 li.selected {
@@ -116,6 +181,15 @@ div.container {
     margin-top:-10px;
     margin-bottom:-15px;
   }
+   .resizeBar {
+    border-top:2px solid #D7D7D7;
+    padding-top:0px;
+    margin-top: -2.8em;
+    margin-bottom:-1em;
+    width:105%;
+    cursor:row-resize;
+    height: 20px;
+  }
 
   p.host {
     width: 250px;
@@ -137,7 +211,6 @@ div.container {
   }
 
   p.hostHeader {
-    margin-left:4.7em;
     width: 250px;
   }
   p.routeHeader {
@@ -170,8 +243,18 @@ li.rootContainer > p {
 }
 
 
+.container.selectionDetailsView {
+height: ;
+width: 100vw;
+background-color: #FFF;
+position: absolute;
+bottom:0px;
+top:38.5vh;
+}
+
+
 div.selectionViewPort {
-  height: 40em;
+  height: 55em;
   width: 100vw;
   padding-left:10px;
   padding-right:20px;
@@ -182,23 +265,21 @@ div.selectionViewPort {
 code.requestViewer {
   overflow-y: auto;
   overflow-x: hidden;
-  float: left;
-  height: 40em;
+  height: 100%;
   width: 50em;
 }
 
 code.responseViewer {
   overflow-y: auto;
   overflow-x: hidden;
-  float: right;
-  height: 40em;
+  height: 100%;
   width: 50em;
 }
 pre.requestViewer {
   overflow-y: auto;
   overflow-x: hidden;
   float: left;
-  height: 40em;
+  height: 100%;
   width: 50%;
 }
 
@@ -206,7 +287,7 @@ pre.responseViewer {
   overflow-y: auto;
   overflow-x: hidden;
   float: right;
-  height: 40em;
+  height: 100%;
   width: 50%;
 }
 
