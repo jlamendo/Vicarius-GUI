@@ -36,13 +36,13 @@ module.exports = View.extend({
         initDrag: function(e) {
             $('body').addClass('noSelect');
             window.startDragHeight = e.clientY;
-            window.listHeight = parseInt($('ul.httpExchangeList').css('max-height').split('px')[0])
-            window.selectionViewHeight = parseInt($('#selectionViewPort').css('height'))
+            window.listHeight = parseInt($('ul.httpExchangeList').css('height').split('px')[0]);
+            window.selectionViewHeight = parseInt($('#selectionViewPort').css('height'));
             document.documentElement.addEventListener('mousemove', this.doDrag, false);
         },
 
         doDrag: function(e) {
-            $('ul.httpExchangeList').css('max-height', window.listHeight + (e.clientY - window.startDragHeight)+'px');
+            $('ul.httpExchangeList').css('height', (window.listHeight + (e.clientY - window.startDragHeight))+'px');
             $('#selectionDetailsView').css('top',e.clientY);
             $('#selectionViewPort').css('height', window.selectionViewHeight + (window.startDragHeight - e.clientY)+'px');
         },

@@ -33,9 +33,9 @@ module.exports = {
             appDir + '/libraries/jquery.min.js',
             appDir + '/libraries/bootstrap.min.js',
             appDir + '/libraries/jquery.bootstrap-autohidingnavbar.js',
+            //appDir + '/libraries/prettydiff.js',
             appDir + '/libraries/zepto.js',
             appDir + '/libraries/prism.js',
-            appDir + '/libraries/iscroll.js',
         ],
         // Specify the stylesheets we want to bundle
         stylesheets: [

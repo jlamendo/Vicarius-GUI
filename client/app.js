@@ -10,12 +10,13 @@ var Me = require('./models/me');
 var httpExchange = require('./models/httpExchange');
 var httpExchangeCollection = require('./models/httpExchangeCollection');
 var domReady = require('domready');
+var prettydiff=require('prettydiff');
 
 module.exports = {
     // this is the the whole app initter
     blastoff: function () {
         var self = window.app = this;
-
+        window.prettydiff = prettydiff;
         // create our global 'me' object and an empty collection for our people models.
         window.me = new Me();
         this.httpExchange = new httpExchange();

@@ -144,7 +144,7 @@ ul.httpExchangeList {
   margin-right: 0;
   width: 103vw;
   margin-top:-4px;
-  max-height: 36em;
+  height: 31.5em;
   overflow-x: hidden;
   overflow-y: auto
   position: absolute;
@@ -266,14 +266,14 @@ code.requestViewer {
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
-  width: 50em;
+  width: 101%;
 }
 
 code.responseViewer {
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
-  width: 50em;
+  width: 101%;
 }
 pre.requestViewer {
   overflow-y: auto;

@@ -23,32 +23,44 @@ module.exports = PageView.extend({
     },
     initialize: function() {
 
-var itemIsVisible = function()
-{
-    var docViewTop = $("#httpExchangeList").scrollTop();
-    var docViewBottom = docViewTop + $("#httpExchangeList").height();
 
-    var elemTop = $($('#selectedExchange')).offset().top;
-    var elemBottom = elemTop + $($('#selectedExchange')).height();
+    $.fn.scrollTo = function(target, options, callback) {
 
-    return (elemBottom >= docViewTop) && (elemTop <= docViewBottom)
-      && (elemBottom <= docViewBottom) &&  (elemTop >= docViewTop)
-}
+        if(typeof options === 'function' && arguments.length === 2) {
 
-function checkVisible( elm, eval ) {
-    eval = eval || "visible";
-    var vpH = $("#httpExchangeList").height(), // Viewport Height
-        st = $("#httpExchangeList").scrollTop(), // Scroll Top
-        y = $(elm).offset().top,
-        elementHeight = 20;
+            callback = options;
+            options = target;
+        }
 
-    if (eval == "visible") return ((y < (vpH + st)) && (y > (st - elementHeight)));
-    if (eval == "above") return ((y < (vpH + st)));
-}
+        var settings = $.extend({
+            scrollTarget  : target,
+            offsetTop     : 185,
+            duration      : 0,
+            easing        : 'linear'
+        }, options);
+
+        return this.each(function(i) {
+
+            var scrollPane = $(this);
+            var scrollTarget = (typeof settings.scrollTarget === 'number') ? settings.scrollTarget : $(settings.scrollTarget);
+            var scrollY = (typeof scrollTarget === 'number') ? scrollTarget : scrollTarget.offset().top + scrollPane.scrollTop() - parseInt(settings.offsetTop, 10);
+
+            scrollPane.animate({scrollTop: scrollY}, parseInt(settings.duration, 10), settings.easing, function() {
+
+                if (typeof callback === 'function') {
+
+                    callback.call(this);
+                }
+
+            });
+
+        });
+
+    };
 
 
-$(document).keydown(function(e){ // 38-up, 40-down
-    // needs a better solution for situations where more li elements exist.
+$(document).keydown(function(e){
+    e.preventDefault();// 38-up, 40-down
     var curElIndex = $('#httpExchangeList li').index($('#selectedExchange'));
     if(curElIndex < 0) curElIndex=0;
     var newElIndex = curElIndex;
@@ -65,17 +77,21 @@ $(document).keydown(function(e){ // 38-up, 40-down
         $('#httpExchangeList li:eq('+curElIndex+')').removeClass('selected');
         $('#httpExchangeList li:eq('+newElIndex+')').attr('id', 'selectedExchange');
         $('#httpExchangeList li:eq('+newElIndex+')').addClass('selected');
-        if(!(checkVisible($('#httpExchangeList li:eq('+newElIndex+')')))) {
+       /* if(!(checkVisible($('#httpExchangeList li:eq('+newElIndex+')')))) {
          $('#httpExchangeList').scrollTo($('#httpExchangeList li:eq('+newElIndex+')'), 1000)
-     }
+     }*/
+     $('#httpExchangeList').scrollTo('#selectedExchange')
 
         return false;
 });
 
-$(document).keyup(function(e){ // 38-up, 40-down
-    // needs a better solution for situations where more li elements exist.
+$(document).keyup(function(e){
+    e.preventDefault(); // 38-up, 40-down
     if ((e.keyCode === 40) || (e.keyCode === 38)) {
+    if(window.doneLoadingCB) clearTimeout(window.doneLoadingCB);
+        window.doneLoadingCB = setTimeout(function(){
         $('#selectedExchange').trigger('click');
+            },200);
     }
         return false;
 });
@@ -84,11 +100,12 @@ $(document).keyup(function(e){ // 38-up, 40-down
     },
     render: function () {
         this.renderWithTemplate();
-        this.selectionDetailsView = new ViewSwitcher(this.getByRole('selectionDetailsView'));
         this.renderCollection(this.collection, httpExchangeView, this.getByRole('httpExchangeList'));
         if (!this.collection.length) {
             this.fetchCollection();
         }
+        this.selectionDetailsView = new ViewSwitcher(this.getByRole('selectionDetailsView'));
+        return this;
     },
     fetchCollection: function () {
         this.collection.fetch();
