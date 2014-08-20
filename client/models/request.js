@@ -16,6 +16,7 @@ module.exports = AmpModel.extend({
         rawText: ['string'],
         inScope: ['boolean'],
         toolFlag: ['number'],
-        messageType: ['string']
+        messageType: ['string'],
+        referenceId: ['string'],
     }
 });

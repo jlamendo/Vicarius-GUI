@@ -1,11 +1,10 @@
-
 {
-  "name": "Vicarius-gui",
+  "name": "Vicarius-GUI",
   "description": "GUI Frontend for the Vicarius proxy System.",
   "author": "Jon Lamendola",
   "version": "0.1.0",
   "dependencies": {
-     "ampersand-model": "2.x.x",
+    "ampersand-model": "2.x.x",
     "ampersand-rest-collection": "1.x.x",
     "ampersand-router": "0.x.x",
     "ampersand-view": "4.x.x",
@@ -22,17 +21,18 @@
     "stylizer": "0.x.x",
     "templatizer": "0.x.x",
     "underscore": "1.x.x",
-    "prettydiff": "^1.1.3"
+    "prettydiff": "^1.1.3",
+    "faye": "^1.0.3"
   },
   "devDependencies": {
     "precommit-hook": "0.x.x"
   },
-    "repository": {
+  "repository": {
     "type": "git",
-    "url": "git://github.com/jlamendo/vicarius-gui.git"
+    "url": "git://github.com/jlamendo/Vicarius-GUI.git"
   },
-   "bugs": {
-    "url": "https://github.com/jlamendo/vicarius-gui/issues"
+  "bugs": {
+    "url": "https://github.com/jlamendo/Vicarius-GUI/issues"
   },
   "main": "index.js",
   "keywords": [

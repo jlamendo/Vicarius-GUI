@@ -1,4 +1,4 @@
-process.env['NODE_ENV'] = 'production';
+process.env['NODE_ENV'] = 'dev';
 var Hapi = require('hapi');
 var config = require('getconfig');
 var moonbootsConfig = require('./moonbootsConfig');
@@ -14,4 +14,10 @@ server.pack.require({'moonboots_hapi': moonbootsConfig}, function (err) {
         });
 return server;
 });
+}
+if(!module.parent){
+    module.exports({GUI: {host: '127.0.0.1', port:'3000'}}, function(){
+
+        console.log('listening on :3000.')
+    })
 }
