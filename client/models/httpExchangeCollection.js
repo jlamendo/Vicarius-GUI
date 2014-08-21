@@ -1,6 +1,7 @@
 // httpExchange Collection - http-exchange-collection.js
 var AmpCollection = require('ampersand-rest-collection');
 var httpExchange = require('./httpExchange');
+var BackboneEvents = require('backbone-events-standalone');
 var Faye = require('faye');
 var _ = require('underscore');
   var fayeClient = new Faye.Client('http://127.0.0.1:8085/faye');
@@ -13,8 +14,9 @@ var _ = require('underscore');
       this.listenToOnce(model, 'sync error', this._onModelSync);
     }, this);
   }
-
-  _.extend(UpdateEventListener.prototype, AmpCollection, {
+    BackboneEvents.mixin(UpdateEventListener.prototype);
+  _.extend(UpdateEventListener.prototype,
+    AmpCollection, {
     _onModelSync: function(model) {
       if(model.id === this._outstandingId) {
         // Great, this is the model we're waiting for!
@@ -34,7 +36,7 @@ var _ = require('underscore');
     constructor: function(models, options) {
       AmpCollection.prototype.constructor.call(this, models, options);
 
-      this.subscription = fayeClient.subscribe(this.url, this._fayeEvent, this);
+      this.subscription = fayeClient.subscribe(this.channel(), this._fayeEvent, this);
     },
 
     _fayeEvent: function(message) {
@@ -64,7 +66,7 @@ var _ = require('underscore');
 
       // Does this id exist in the collection already?
       // If so, rather just do an update
-      var id = this._getModelId(body);
+      var id = body[this.model.prototype.idAttribute];
       if(this.get(id)) {
         return this._updateEvent(body);
       }
@@ -125,7 +127,22 @@ var _ = require('underscore');
   // Create our global collection of **Todos**.
 module.exports = LiveCollection.extend({
     model: httpExchange,
-    url: 'http://127.0.0.1:8085/httpExchange?project=proxyHistory'
+    url: 'http://127.0.0.1:8085/httpExchange?project=proxyHistory',
+    comparator: function (model) {
+        return -1 * model.createdAt.valueOf();
+    },
+    channel: function(){
+      return '/' + this.url.split('://')[1].split('/')[1].replace('/', '?').split('?')[0]+ '/proxyHistory'//app.me.config.user.session.project
+    },
+    sortByIndex: function(direction, key){
+      map = {
+        'up': -1,
+        'down': +1
+      }
+      this.comparator = function (model) {
+        return map[direction] * model[key].valueOf();
+    },
+    }
 });
 
 

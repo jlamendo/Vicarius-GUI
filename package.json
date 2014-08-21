@@ -1,7 +1,9 @@
 {
   "name": "Vicarius-GUI",
   "description": "GUI Frontend for the Vicarius proxy System.",
-  "author": "Jon Lamendola",
+  "author": {
+    "name": "Jon Lamendola"
+  },
   "version": "0.1.0",
   "dependencies": {
     "ampersand-model": "2.x.x",
@@ -51,5 +53,14 @@
     "trailing": true,
     "undef": true,
     "white": true
-  }
+  },
+  "readme": "# Vicarius\n\nThis app was generated with the [humanjs cli tool](http://docs.humanjavascript.com).\n\n## How to run it\n\n1. download/install [node.js](http://nodejs.org/)\n1. install dependencies: `npm i`\n1. run it: `npm start`\n1. open http://localhost:3000 in a browser\n\n## How it's structured\n\nSee docs: http://docs.humanjavascript.com\nCurated modules: http://resources.humanjavascript.com\n\n## Credits\n\nLots of folks at [&yet](http://andyet.com) primary author [@HenrikJoreteg](http://twitter.com/henrikjoreteg)\n\n## Want a deeper understanding?\n\nGet the book: http://humanjavascript.com\n",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/jlamendo/Vicarius-GUI",
+  "_id": "Vicarius-GUI@0.1.0",
+  "dist": {
+    "shasum": "f2bc59c7114ff82dd01a7767e3e2f6e3eafbd323"
+  },
+  "_resolved": "git+ssh://git@github.com/jlamendo/vicarius-gui#580f36351e175613064d743c417a773f5ac3a9ca",
+  "_from": "git+ssh://git@github.com/jlamendo/vicarius-gui#"
 }
