@@ -1,4 +1,3 @@
-process.env['NODE_ENV'] = 'dev';
 var Hapi = require('hapi');
 var config = require('getconfig');
 var moonbootsConfig = require('./moonbootsConfig');

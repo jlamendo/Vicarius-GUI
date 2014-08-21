@@ -21,7 +21,7 @@ module.exports = {
         window.me = new Me();
         this.httpExchange = new httpExchange();
         this.httpExchangeCollection = new httpExchangeCollection();
-
+        this.httpExchangeCollection.on('any', console.log.bind(console))
         // init our URL handlers and the history tracker
         this.router = new Router();
 

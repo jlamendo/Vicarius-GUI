@@ -87,7 +87,7 @@ background-color: #FFF;
 
 
 .navbar.navbar-default.navMenu {
-  width: 105em;
+  width: 120em;
   border-left: none;
   position:relative;
   top: -1px;
@@ -191,6 +191,9 @@ div.container {
     height: 20px;
   }
 
+  p.referenceId {
+    width: 100px;
+  }
   p.host {
     width: 250px;
   }
@@ -208,6 +211,10 @@ div.container {
   }
   p.responseTime {
     width: 150px;
+  }
+
+  p.referenceIdHeader {
+    width: 100px;
   }
 
   p.hostHeader {

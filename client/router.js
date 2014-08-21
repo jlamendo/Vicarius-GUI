@@ -17,7 +17,7 @@ module.exports = Router.extend({
             model: app.httpExchange,
             collection: app.httpExchangeCollection
         }));
-      $('#httpExchangeList li:eq(0)').trigger('click');
+      $('#httpExchangeList li:eq(' + window.app.settings.user.session.selectedItem +')').trigger('click');
     },
     IDE: function () {
         $('#rootContainer').hide();

@@ -63,76 +63,51 @@ var _ = require('underscore');
 
     _createEvent: function(body) {
       console.log('live: Create event', body);
-
-      // Does this id exist in the collection already?
-      // If so, rather just do an update
-      var id = body[this.model.prototype.idAttribute];
-      if(this.get(id)) {
-        return this._updateEvent(body);
-      }
-
-      // Look to see if this collection has any outstanding creates...
-      var idAttribute = this.model.prototype.idAttribute;
-      var unsaved = this.filter(function(model) {
-        return !model.id;
-      });
-
-      // If there are unsaved items, monitor them and if one of them turns out to be the matching object
-      // then simply update that
-      if(unsaved.length) {
-
-        var listener = new UpdateEventListener(id, unsaved);
-
-        listener.once('notfound', function() {
-          this.add(body, { parse: true });
-        }, this);
-
-      } else {
-
-        this.add(body, { parse: true });
-
-      }
+      return this.add(body, { parse: true, merge: true });
     },
 
     _updateEvent: function(body) {
-      var id = this._getModelId(body);
-
-      var parsed = new this.model(body, { parse: true });
-
-      // Try find an existing instance with the given ID
-      var existingModel = this.get(id);
-
-      // If it exists, update it
-      if(existingModel) {
-        existingModel.set(parsed.attributes);
-      } else {
-        // If it doesn't exist, add it
-        this.add(parsed);
-      }
-
+       return this.add(body, { parse: true, merge: true });
     },
 
     _removeEvent: function(body) {
-
       var id = this._getModelId(body);
       this.remove(id);
     },
-
-    _getModelId: function(model) {
-      return model[this.model.prototype.idAttribute];
-    }
 
   });
 
   // Create our global collection of **Todos**.
 module.exports = LiveCollection.extend({
     model: httpExchange,
-    url: 'http://127.0.0.1:8085/httpExchange?project=proxyHistory',
+    url: 'http://127.0.0.1:8085/httpExchange?project=' + (function(){
+      return {
+            user: {
+                username: 'ZeroCool',
+                apiKey: 'asdf',
+                session: {
+                    project: 'proxyHistory',
+                    selectedItem: 0,
+                }
+            }
+        };
+      })().user.session.project,
     comparator: function (model) {
-        return -1 * model.createdAt.valueOf();
+        return -1 * model.savedAt.valueOf();
     },
     channel: function(){
-      return '/' + this.url.split('://')[1].split('/')[1].replace('/', '?').split('?')[0]+ '/proxyHistory'//app.me.config.user.session.project
+      return '/' + this.url.split('://')[1].split('/')[1].replace('/', '?').split('?')[0]+ '/'+ (function(){
+      return {
+            user: {
+                username: 'ZeroCool',
+                apiKey: 'asdf',
+                session: {
+                    project: 'proxyHistory',
+                    selectedItem: 0,
+                }
+            }
+        };
+      })().user.session.project
     },
     sortByIndex: function(direction, key){
       map = {
@@ -141,7 +116,7 @@ module.exports = LiveCollection.extend({
       }
       this.comparator = function (model) {
         return map[direction] * model[key].valueOf();
-    },
+    }
     }
 });
 

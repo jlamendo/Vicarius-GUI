@@ -14,6 +14,7 @@ module.exports = View.extend({
         "click .httpExchangeElement"         : "select",
     },
         bindings: {
+            'referenceId': '[role=referenceId]',
             'host': '[role=host]',
             'requestPath': '[role=route]',
             'requestMethod': '[role=method]',
