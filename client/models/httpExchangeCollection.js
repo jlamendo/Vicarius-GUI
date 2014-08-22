@@ -82,7 +82,7 @@ var conf = function(){
   // Create our global collection of **Todos**.
 module.exports = LiveCollection.extend({
     model: httpExchange,
-    url: 'http://' + conf().DB.host + ':' + conf().DB.port + '/httpExchange?project=' + conf().user.session.project,
+    url: 'http://' + conf().DB.host + ':' + conf().DB.port + '/httpExchange?project=' + conf().user.session.project +'&authToken=' + conf().user.authToken,
     comparator: function (model) {
         return -1 * model.savedAt.valueOf();
     },

@@ -8,5 +8,5 @@ var conf = function(){
 
 module.exports = AmpCollection.extend({
     model: serverSettings,
-    url: 'http://' + conf().user.username + ':' + conf().user.authToken + '@' + conf().API.host + ':' + conf().API.port + '/api/v1/serverSettings',
+    url: 'http://' + conf().API.host + ':' + conf().API.port + '/api/v1/serverSettings?authToken='+  conf().user.authToken,
 });
