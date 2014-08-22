@@ -8,11 +8,10 @@ var appDir = __dirname + '/client';
 var cssDir = __dirname + '/public/css';
 var logicDir = __dirname + '/client/logic';
 var buildConf = function(){
-if(!fs.existsSync + process.env['VICARIUS_DIR'] + '/config/custom.json'){
+if(!fs.existsSync(process.env['VICARIUS_DIR'] + '/config/custom.json')){
         fs.writeFileSync(process.env['VICARIUS_DIR'] + '/config/custom.json', fs.readFileSync(process.env['VICARIUS_DIR'] + '/config/default.json').toString());
 }
- var fileName = process.env['VICARIUS_DIR'] + '/config/custom.json'
- var confJSON = fs.readFileSync(fileName).toString();
+ var confJSON = fs.readFileSync(process.env['VICARIUS_DIR'] + '/config/custom.json').toString();
  var prefix = 'window.serverSettingsJSON = ';
  fs.writeFileSync(appDir + '/libraries/serverSettings.js', prefix + confJSON);
 }
