@@ -1,5 +1,4 @@
 var AmpersandModel = require('ampersand-model');
-var httpExchange = require('./httpExchange.js');
 
 module.exports = AmpersandModel.extend({
     type: 'user',

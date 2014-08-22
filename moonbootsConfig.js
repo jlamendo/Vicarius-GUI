@@ -1,13 +1,23 @@
 var config = require('getconfig');
 var stylizer = require('stylizer');
 var templatizer = require('templatizer');
+var fs = require('fs');
 
 // for reuse
 var appDir = __dirname + '/client';
 var cssDir = __dirname + '/public/css';
 var logicDir = __dirname + '/client/logic';
+var buildConf = function(){
+if(!fs.existsSync + process.env['VICARIUS_DIR'] + '/config/custom.json'){
+        fs.writeFileSync(process.env['VICARIUS_DIR'] + '/config/custom.json', fs.readFileSync(process.env['VICARIUS_DIR'] + '/config/default.json').toString());
+}
+ var fileName = process.env['VICARIUS_DIR'] + '/config/custom.json'
+ var confJSON = fs.readFileSync(fileName).toString();
+ var prefix = 'window.serverSettingsJSON = ';
+ fs.writeFileSync(appDir + '/libraries/serverSettings.js', prefix + confJSON);
+}
 
-
+buildConf();
 module.exports = {
     // Tell the Hapi server what URLs the application should be served from.
     // Since we're doing clientside routing we want to serve this from some type
@@ -33,8 +43,8 @@ module.exports = {
             appDir + '/libraries/jquery.min.js',
             appDir + '/libraries/bootstrap.min.js',
             appDir + '/libraries/jquery.bootstrap-autohidingnavbar.js',
-            //appDir + '/libraries/prettydiff.js',
             appDir + '/libraries/zepto.js',
+            appDir + '/libraries/serverSettings.js',
             appDir + '/libraries/prism.js',
         ],
         // Specify the stylesheets we want to bundle
@@ -50,6 +60,7 @@ module.exports = {
             // js file is requested. Which means you can seamlessly change jade and
             // refresh in your browser to get new templates.
             if (config.isDev) {
+                buildConf();
                 templatizer(__dirname + '/templates', appDir + '/templates.js');
             }
         },

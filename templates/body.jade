@@ -3,7 +3,7 @@ body
     .navbar.navbar-default.navLogo
      ul.nav.navbar-nav
       li
-       a.vicariusLogo(href="javascript:if($('#navBarHideButton').attr('data-autoHide')==='hide'){$('#rootNavbar').hide();$('#navBarHideButton').attr('data-autoHide', 'show');}else{$('#rootNavbar').show();$('#navBarHideButton').attr('data-autoHide', 'hide');}", data-autoHide='hide', id='navBarHideButton')
+       a.vicariusLogo(href='#', data-autoHide='hide', id='navBarHideButton', onClick='window.toggleNavBar()')
         span.glyphicon.glyphicon-chevron-right
     .navbar.navbar-default.navMenu(id='rootNavbar')
             ul.nav.navbar-nav

@@ -4,7 +4,10 @@ var httpExchange = require('./httpExchange');
 var BackboneEvents = require('backbone-events-standalone');
 var Faye = require('faye');
 var _ = require('underscore');
-  var fayeClient = new Faye.Client('http://127.0.0.1:8085/faye');
+var conf = function(){
+    if(window.conf) return window.conf();
+    else return window.serverSettingsJSON;
+}
 
   function UpdateEventListener(outstandingId, models) {
     this._outstandingId = outstandingId;
@@ -19,12 +22,10 @@ var _ = require('underscore');
     AmpCollection, {
     _onModelSync: function(model) {
       if(model.id === this._outstandingId) {
-        // Great, this is the model we're waiting for!
         this.trigger('found', model);
         this.stopListening();
 
       } else if(--this._awaitCount === 0) {
-        // All the models are done and we haven't found the id we received from the realtime stream
         this.stopListening();
         this.trigger('notfound');
       }
@@ -36,6 +37,7 @@ var _ = require('underscore');
     constructor: function(models, options) {
       AmpCollection.prototype.constructor.call(this, models, options);
 
+      fayeClient = new Faye.Client('http://' + conf().DB.host + ':' + conf().DB.port + '/faye');
       this.subscription = fayeClient.subscribe(this.channel(), this._fayeEvent, this);
     },
 
@@ -80,34 +82,12 @@ var _ = require('underscore');
   // Create our global collection of **Todos**.
 module.exports = LiveCollection.extend({
     model: httpExchange,
-    url: 'http://127.0.0.1:8085/httpExchange?project=' + (function(){
-      return {
-            user: {
-                username: 'ZeroCool',
-                apiKey: 'asdf',
-                session: {
-                    project: 'proxyHistory',
-                    selectedItem: 0,
-                }
-            }
-        };
-      })().user.session.project,
+    url: 'http://' + conf().DB.host + ':' + conf().DB.port + '/httpExchange?project=' + conf().user.session.project,
     comparator: function (model) {
         return -1 * model.savedAt.valueOf();
     },
     channel: function(){
-      return '/' + this.url.split('://')[1].split('/')[1].replace('/', '?').split('?')[0]+ '/'+ (function(){
-      return {
-            user: {
-                username: 'ZeroCool',
-                apiKey: 'asdf',
-                session: {
-                    project: 'proxyHistory',
-                    selectedItem: 0,
-                }
-            }
-        };
-      })().user.session.project
+      return '/' + this.url.split('://')[1].split('/')[1].replace('/', '?').split('?')[0]+ '/'+ conf().user.session.project
     },
     sortByIndex: function(direction, key){
       map = {

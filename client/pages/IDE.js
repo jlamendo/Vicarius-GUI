@@ -1,16 +1,13 @@
 var PageView = require('./base');
 var templates = require('../templates');
-
-// TODO: Make details subview render on keyup.
-// Fix viewport height detection.
-// Split request/response
-// Render/Syntax highlights can wait
-// Add filters
-// On base vicarious level config, make binaries passthrough
-// Add IDE in an iframe.
-
+var conf = function(){
+    if(window.conf) return window.conf();
+    else return window.serverSettingsJSON;
+}
 
 module.exports = PageView.extend({
     pageTitle: 'Vicarius - Cloud9 IDE',
-    template: templates.pages.IDE,
+    template: function tmpl_pages_IDE() {
+        return '<section class="page IDE"><object data="http://' +conf().IDE.host + ':' + conf().IDE.port + '" class="IDE"><embed src="http://' +conf().IDE.host + ':' + conf().IDE.port + '" class="IDE"/>Error: IDE is not running. Please start IDE and try again.</object></section>';
+    },
 });

@@ -15,13 +15,13 @@ module.exports = Router.extend({
         $('#rootContainer').show();
         this.trigger('newPage', new HistoryPage({
             model: app.httpExchange,
-            collection: app.httpExchangeCollection
+            collection: app.httpExchangeCollection,
+            window: window,
         }));
-      $('#httpExchangeList li:eq(' + window.app.settings.user.session.selectedItem +')').trigger('click');
+      $('#httpExchangeList li:eq(' + window.conf().user.session.selectedItem +')').trigger('click');
     },
     IDE: function () {
         $('#rootContainer').hide();
-        //document.getElementById('nav-ask').style.display = 'none';
         this.trigger('newPage', new IDEPage({
             model: me}));
     },

@@ -15,10 +15,13 @@ module.exports = View.extend({
     template: templates.body,
     initialize: function () {
         // this marks the correct nav item selected
+        window.toggleNavBar = function(){
+            if($('#navBarHideButton').attr('data-autoHide')==='hide'){$('#rootNavbar').hide();$('#navBarHideButton').attr('data-autoHide', 'show');}else{$('#rootNavbar').show();$('#navBarHideButton').attr('data-autoHide','hide');}
+        };
         app.router.history.on('route', this.updateActiveNav, this);
     },
     events: {
-        'click a[href]': 'handleLinkClick'
+        'click a[href]': 'handleLinkClick',
     },
     render: function () {
         // some additional stuff we want to add to the document head
@@ -68,8 +71,8 @@ module.exports = View.extend({
             app.navigate(path);
         }
     },
-
-    updateActiveNav: function () {
+    updateActiveNav: function (e) {
+        console.log(e)
         var pathname = window.location.pathname;
         $('.nav a').each(function () {
             var navArray = _.compact($(this).attr('href').split('/')).join('/').toLowerCase();
