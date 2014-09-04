@@ -25,7 +25,14 @@
     "underscore": "1.x.x",
     "prettydiff": "^1.1.3",
     "faye": "^1.0.3",
-    "backbone-events-standalone": "^0.2.2"
+    "backbone-events-standalone": "^0.2.2",
+    "list.js": "git://github.com/javve/list.js",
+    "list.fuzzysearch.js": "git://github.com/javve/list.fuzzysearch.js",
+    "bootstrap-select": "^1.6.2",
+    "ampersand-input-view": "^1.2.4",
+    "ampersand-form-view": "^1.0.2",
+    "ampersand-array-input-view": "^2.0.0",
+    "ampersand-checkbox-view": "^2.0.1"
   },
   "devDependencies": {
     "precommit-hook": "0.x.x"
