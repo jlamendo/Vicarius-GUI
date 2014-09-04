@@ -9,30 +9,44 @@ var _ = require('underscore');
 var templates = require('../templates');
 var tracking = require('../helpers/metrics');
 var setFavicon = require('favicon-setter');
-
+var conf = function() {
+    if (window.conf) return window.conf();
+    else return window.serverSettingsJSON;
+}
 
 module.exports = View.extend({
     template: templates.body,
-    initialize: function () {
+    initialize: function() {
         // this marks the correct nav item selected
-        window.toggleNavBar = function(){
-            if($('#navBarHideButton').attr('data-autoHide')==='hide'){$('#rootNavbar').hide();$('#navBarHideButton').attr('data-autoHide', 'show');}else{$('#rootNavbar').show();$('#navBarHideButton').attr('data-autoHide','hide');}
+        window.toggleNavBar = function() {
+            if ($('#navBarHideButton').attr('data-autoHide') === 'hide') {
+                $('#rootNavbar').hide();
+                $('#navBarHideButton').attr('data-autoHide', 'show');
+            } else {
+                $('#rootNavbar').show();
+                $('#navBarHideButton').attr('data-autoHide', 'hide');
+            }
         };
         app.router.history.on('route', this.updateActiveNav, this);
     },
     events: {
         'click a[href]': 'handleLinkClick',
+        'click button.refresh': 'refreshServer',
+        'click button.playPause': 'playPause',
+        'blur #createProfileInput': 'addProfile',
+        'blur #createProjectInput': 'addProject',
     },
-    render: function () {
+    render: function() {
         // some additional stuff we want to add to the document head
         $('head').append(templates.head());
 
         // main renderer
-        this.renderWithTemplate({me: me});
-
+        this.renderWithTemplate({
+            me: me
+        });
         // init and configure our page switcher
         this.pageSwitcher = new ViewSwitcher(this.getByRole('page-container'), {
-            show: function (newView, oldView) {
+            show: function(newView, oldView) {
                 // it's inserted and rendered for me
                 document.title = _.result(newView.pageTitle) || "Vicarius";
                 document.scrollTop = 0;
@@ -46,11 +60,12 @@ module.exports = View.extend({
         });
 
         // setting a favicon for fun (note, it's dyanamic)
+
         setFavicon('/images/ampersand.png');
         return this;
     },
 
-    setPage: function (view) {
+    setPage: function(view) {
         // tell the view switcher to render the new one
         this.pageSwitcher.set(view);
 
@@ -58,7 +73,7 @@ module.exports = View.extend({
         this.updateActiveNav();
     },
 
-    handleLinkClick: function (e) {
+    handleLinkClick: function(e) {
         var t = $(e.target);
         var aEl = t.is('a') ? t[0] : t.closest('a')[0];
         var local = window.location.host === aEl.host;
@@ -71,10 +86,9 @@ module.exports = View.extend({
             app.navigate(path);
         }
     },
-    updateActiveNav: function (e) {
-        console.log(e)
+    updateActiveNav: function(e) {
         var pathname = window.location.pathname;
-        $('.nav a').each(function () {
+        $('.nav a.navItem').each(function() {
             var navArray = _.compact($(this).attr('href').split('/')).join('/').toLowerCase();
             var pathArray = _.compact(pathname.split('/')).join('/').toLowerCase();
 
@@ -84,5 +98,68 @@ module.exports = View.extend({
                 $(this).parent().removeClass('active');
             }
         });
-    }
+    },
+    refreshServer: function(e) {
+        $.ajaxSetup({
+            headers: {
+                "X-Vicarius-Auth": conf().user.authToken
+            }
+        });
+        $($('button.btn-info.btn-xs.refresh').find('i.fa-refresh')[0]).addClass('fa-spin');
+        $.post(
+            'http://' + conf().API.host + ':' + conf().API.port + '/api/v1/cores/refresh', {
+                profile: $('.selectpacker.profiles').selectpicker('val'),
+                project: $('.selectpacker.projects').selectpicker('val'),
+            },
+            function(responseText) {
+                window.app.syncDropdowns();
+                $($('button.btn-info.btn-xs.refresh').find('i.fa-refresh')[0]).removeClass('fa-spin');
+            }
+        )
+    },
+    playPause: function(e) {
+        $.ajaxSetup({
+            headers: {
+                "X-Vicarius-Auth": conf().user.authToken
+            }
+        });
+        $($('button.btn-info.btn-xs.playPause').find('i')[0]).toggleClass('fa-pause').toggleClass('fa-play');
+        $.post(
+            'http://' + conf().API.host + ':' + conf().API.port + '/api/v1/cores/toggle',
+            {
+            },
+            function(responseText) {
+            }
+        )    },
+    addProject: function(e) {
+        var existingProjects = [];
+        $($('.selectpacker.projects').find('option')).each(function() {
+            existingProjects.push(this.value)
+        })
+        var newProj = $('#createProjectInput').val();
+        $('#createProjectInput').val('');
+        if(existingProjects.indexOf(newProj)=== -1){
+        $('.selectpacker.projects')
+            .append($('<option>')
+                .text(newProj));
+        $('.selectpacker.projects').selectpicker('refresh');
+        } else {
+            $('.selectpacker.projects').selectpicker('val', newProj)
+        }
+    },
+    addProfile: function(e) {
+        var existingProfiles = [];
+        $($('.selectpacker.profiles').find('option')).each(function() {
+            existingProfiles.push(this.value)
+        })
+        var newProf = $('#createProfileInput').val();
+        if(existingProfiles.indexOf(newProf)=== -1){
+        $('.selectpacker.profiles')
+            .append($('<option>')
+                .text(newProf));
+        $('.selectpacker.profiles').selectpicker('refresh');
+        } else {
+            $('.selectpacker.profiles').selectpicker('val', newProf)
+        }
+    },
 });

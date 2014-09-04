@@ -8,7 +8,7 @@ module.exports = AmpModel.extend({
         rawText: ['string'],
         body: ['string'],
         headers: ['object'],
-        cookies: ['array'],
+       // cookies: ['array'],
         mimeType: ['string'],
         host: ['string'],
         protocol: ['string'],

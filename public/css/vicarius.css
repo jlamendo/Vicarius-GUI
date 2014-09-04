@@ -1,9 +1,16 @@
 body, html {
  height: 100%;
- margin: 0px;
- padding: 0px;
+ margin: 0.000em;
+ padding: 0.000em;
  overflow: hidden;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 500;
 }
+
+.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
+  display: none;
+}
+
 .body {
  height: 100vh;
 
@@ -12,8 +19,248 @@ body, html {
   width: 100vw;
   height: 100vh;
 }
+.spacer{
+  width:3px;
+}
+
+*.btn-xs {
+  position:relative !important;
+  top:.3em !important;
+  border: 3px solid rgba(0, 0, 0, 0) !important;
+  border-style: none !important;
+    background-color: #0099CC !important;
+    border-spacing: 3px 3px!important;
+    outline:none;
+  box-decoration-break: none;
+  max-height:1.65em;
+}
+button.refresh{
+  height:1.65em;
+  width: 1.65em;
+  top:.28em !important;
+}
+button.playPause{
+  height:1.65em;
+  width: 1.65em;
+  margin-left:3px;
+  top:.28em !important;
+}
+.selectpacker{
+  display:none;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    font-size:13px;
+}
+.selectpacker.profiles{
+  display:none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    font-size:13px;
+}
+.selectpicker.projects{
+  display:none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    font-size:13px;
+  }
+
+.hoverEditContainer{
 
 
+}
+
+.hoverEditLabel.dropDown {
+
+}
+span.hoverEditChild.dropDown {
+      width:8.5em;
+      max-height:1.63em;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    font-size:13;
+}
+
+input.hoverEditInput {
+    margin-left:1.600em;
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    border-color: transparent;
+    color: #000;
+    display: none;
+    z-index:50;
+}
+
+input.hoverEditInput:focus {
+    outline: 0;
+    margin-left:1.600em;
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    border-color: transparent;
+    color: #000;
+    z-index:50;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    vertical-align: middle;
+    line-height: normal;
+    -webkit-user-select: auto
+}
+
+input.editInput {
+    margin-left:1.600em;
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    border-color: transparent;
+    color: #000;
+    display: none;
+    z-index:50;
+}
+
+input.editInput:focus {
+    outline: 0;
+    margin-left:1.600em;
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    border-color: transparent;
+    color: #000;
+    z-index:50;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    vertical-align: middle;
+    line-height: normal;
+    -webkit-user-select: auto
+}
+
+
+input.editInput.dropDown {
+    width:6em;
+    max-height:1.63em;
+    margin-left:0em;
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    border-color: transparent;
+    color: #000;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    font-size:13;
+    display: none;
+    z-index:50;
+}
+
+input.editInput.dropDown:focus {
+    outline: 0;
+    max-width:5em;
+    max-height:1.63em;
+    margin-left:-.05em;
+    margin-top:-.2em;
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    border-color: transparent;
+    color: #000;
+    z-index:50;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    font-size:13;
+    vertical-align: auto;
+    line-height: auto;
+    -webkit-user-select: auto
+}
+
+
+
+
+a.sortLabel{
+margin-left:1.600em;
+}
+a.sortLabel:hover {
+margin-left:1.600em;
+    text-decoration: none;
+}
+
+.arrow-up {
+  display: inline-block;
+  width: 0.438em;
+  height: 0.438em;
+  position: absolute;
+  margin-left: .1em;
+  margin-right: 1.2em;
+  margin-top:0.000em;
+  margin-bottom: -2.500em;
+  border-left: 0.438em solid transparent;
+  border-right: 0.438em solid transparent;
+
+  border-bottom: 0.438em solid #0099CC;
+    -webkit-transition: all .3s ease-out;
+   -moz-transition: all .3s ease-out;
+   -o-transition: all .3s ease-out;
+   transition: all .3s ease-out;
+}
+.arrow-up:hover {
+  display: inline-block;
+  width: 0.438em;
+  height: 0.438em;
+  position: absolute;
+  margin-left: .1em;
+  margin-right: 1.2em;
+  margin-top:0.000em;
+  margin-bottom: -2.500em;
+  border-left: 0.438em solid transparent;
+  border-right: 0.438em solid transparent;
+
+  border-bottom: 0.438em solid #0099CC;
+    -moz-transform: scale(1.5);
+   -webkit-transform: scale(1.5);
+   -o-transform: scale(1.5);
+   transform: scale(1.5);
+   -ms-transform: scale(1.5);
+filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+   M11=2, M12=-0, M21=0, M22=2);
+}
+
+
+.arrow-down {
+  display: inline-block;
+  width: 0.438em;
+  height: 0.438em;
+  position: absolute;
+  margin-left: .1em;
+  margin-right: 1.2em;
+  margin-bottom: 0.000em;
+  margin-top: 0.750em;
+  border-left: 0.438em solid transparent;
+  border-right: 0.438em solid transparent;
+
+  border-top: 0.438em solid #0099CC;
+     -webkit-transition: all .3s ease-out;
+   -moz-transition: all .3s ease-out;
+   -o-transition: all .3s ease-out;
+   transition: all .3s ease-out;}
+.arrow-down:hover {
+  display: inline-block;
+  width: 0.438em;
+  height: 0.438em;
+  position: absolute;
+  margin-left: .1em;
+  margin-right: 1.2em;
+  margin-bottom: 0.000em;
+  margin-top: 0.750em;
+  border-left: 0.438em solid transparent;
+  border-right: 0.438em solid transparent;
+
+  border-top: 0.438em solid #0099CC;
+     -moz-transform: scale(1.5);
+   -webkit-transform: scale(1.5);
+   -o-transform: scale(1.5);
+   transform: scale(1.5);
+   -ms-transform: scale(1.5);
+filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand',
+   M11=1.5, M12=-0, M21=0, M22=2);
+}
 
 .fill-height-or-more {
   display: -webkit-box;
@@ -66,7 +313,7 @@ body, html {
 .detailsNav{
 background-color: #FFF;
 margin-bottom: -1em;
-margin-top: -1px;
+margin-top: -0.063em;
 height: 2.6em;
 }
 li.bodyTab{
@@ -77,40 +324,46 @@ background-color: #FFF;
 }
 
 .navbar-nav > li > a {
-  padding-top:5px !important;
-  padding-bottom:5px !important;
+  padding-top:0.313em !important;
+  padding-bottom:0.313em !important;
 }
 .navbar {
-  min-height:32px !important;
-  margin-bottom: -2px !important;
+  min-height:2.000em !important;
+  margin-bottom: -0.125em !important;
 }
 
 
 .navbar.navbar-default.navMenu {
   width: 120em;
   border-left: none;
+  border-style: none;
+  outline:none;
   position:relative;
-  top: -1px;
-  right:-2em;
+  top: -0.063em;
+  right:-1.2em;
 }
 a.vicariusLogo {
-  margin-left:-10px;
-  padding-right:5px;
+  margin-left: -0.6.2em;
 }
 
 div.navbar.navbar-default.navLogo {
   position:absolute;
-  top: 0;
-  left: 0;
+  background-color: #0099CC;
+  top: 0.01em;
+  left: -.7em;
   z-index: 50;
   border-right: none;
-  width: 2em;
+  border-style: none;
+  border-radius:0px;
+  outline:none;
+  width: 2.5em;
 }
 
 
 li.httpExchangeElement {
   border-left: none;
   border-right: none;
+    border-radius:0px;
 }
 
 li.httpExchangeLabels {
@@ -123,6 +376,7 @@ li.httpExchangeLabels {
 
 
 p.httpExchangeLabel{
+    border-radius:0px;
   color: #000;
   display: inline-block;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -131,9 +385,9 @@ p.httpExchangeLabel{
   line-height: normal;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 20px;
+  height: 1.250em;
   margin: 0 auto;
-  margin-left: 15px;
+  margin-left: 0.938em;
   font-size: 16px;
 }
 
@@ -143,8 +397,9 @@ ul.httpExchangeList {
   margin-left: -2.9em;
   margin-right: 0;
   width: 103vw;
-  margin-top:-4px;
+  margin-top:-0.250em;
   height: 31.5em;
+    border-radius:0px;
   overflow-x: hidden;
   overflow-y: auto
   position: absolute;
@@ -153,9 +408,12 @@ ul.httpExchangeList {
 li.selected {
   background-color: #0099CC;
   color: #FFF;
+
 }
  li.selected > p.httpExchangeLabel {
     color: #FFF;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 550 !important;
  }
 
  a.coloredTab {
@@ -163,13 +421,16 @@ li.selected {
 
  }
 
-li.not-selected {
+li.not-selected > p.httpExchangeLabel {
     background-color: #FFF;
     color: #000;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    text-shadow: 0px 0px 5px #0099CC;
 }
 div.container {
   width: 100vw;
-  padding: 1px;
+  padding: 0.063em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -178,125 +439,123 @@ div.container {
     position:absolute;
     display: inline-block;
     height:105%;
-    margin-top:-10px;
-    margin-bottom:-15px;
+    margin-top:-0.625em;
+    margin-bottom:-0.938em;
   }
    .resizeBar {
     border-top:2px solid #D7D7D7;
-    padding-top:0px;
+    padding-top:0.000em;
     margin-top: -2.8em;
     margin-bottom:-1em;
     width:105%;
     cursor:row-resize;
-    height: 20px;
+    height: 1.250em;
   }
 
   p.referenceId {
-    width: 100px;
+    width: 6.25em;
   }
   p.host {
-    width: 250px;
+    width: 15.63em;
   }
   p.route {
-    width: 350px;
+    width: 21.875em;
   }
   p.method {
-    width: 80px;
+    width: 8.125em;
   }
   p.statusCode {
-    width: 80px;
+    width: 8.125em;
   }
   p.responseLength {
-    width: 120px;
+    width: 8.125em;
   }
   p.responseTime {
-    width: 150px;
+    width: 9.375em;
   }
 
   p.referenceIdHeader {
-    width: 100px;
+    width: 6.25em;
   }
 
   p.hostHeader {
-    width: 250px;
+    width: 15.63em;
   }
   p.routeHeader {
-    width: 350px;
+    width: 21.88em;
   }
   p.methodHeader {
-    width: 80px;
+    width: 8.13em;
   }
   p.statusCodeHeader {
-    width: 80px;
+    width: 8.13em;
   }
   p.responseLengthHeader {
-    width: 120px;
+    width: 8.13em;
   }
   p.responseTimeHeader {
-    width: 150px;
-  }
+    width: 9.38em;  }
 
 
 li.rootContainer {
-  margin-top:-2px;
-  height: 33px;
+  margin-top:-0.125em;
+  height: 2.063em;
   border-left: none;
   border-right: none;
 }
 
 li.rootContainer > p {
-  margin-top: -5px;
- height: 30px;
+  margin-top: -0.313em;
+ height: 1.875em;
 }
 
 
 .container.selectionDetailsView {
-height: ;
 width: 100vw;
 background-color: #FFF;
 position: absolute;
-bottom:0px;
+bottom:0.000em;
 top:38.5vh;
 }
 
 
 div.selectionViewPort {
-  height: 55em;
+height: 31em;
   width: 100vw;
-  padding-left:10px;
-  padding-right:20px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  padding-left:0.625em;
+  padding-right:1.250em;
+  overflow-x:none;
+  overflow-y: hidden;
 }
 
 code.requestViewer {
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
-  width: 101%;
+  width: 100%;
 }
 
 code.responseViewer {
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
-  width: 101%;
+  width: 100%;
 }
 pre.requestViewer {
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   float: left;
   height: 100%;
   width: 50%;
+
 }
 
 pre.responseViewer {
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   float: right;
   height: 100%;
   width: 50%;
 }
+
 
 object.IDE {
 height: 100em;
@@ -306,4 +565,3 @@ embed.IDE {
 height: 100em;
 width: 100vw;
 }
-

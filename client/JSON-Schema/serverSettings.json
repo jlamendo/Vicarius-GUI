@@ -1,0 +1,1242 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://jsonschema.net#",
+  "type": "object",
+  "title": "root",
+  "description": "",
+  "name": "",
+  "additionalProperties": false,
+  "properties": {
+    "general": {
+      "id": "#general",
+      "type": "object",
+      "title": "",
+      "description": "",
+      "name": "",
+      "additionalProperties": false,
+      "properties": {
+        "maxBytesUnknownType": {
+          "id": "#maxBytesUnknownType",
+          "type": "string",
+          "title": "Unknown Content Type Size Limit",
+          "description": "Maximum Size for responses that do not list a content type to pass filtering.",
+          "name": "",
+          "minLength": 0,
+          "default": "4000",
+          "additionalProperties": false
+        },
+        "dataDir": {
+          "id": "#dataDir",
+          "type": "string",
+          "title": "Data Directory",
+          "description": "The location of the folder where modules and profiles are stored.",
+          "name": "",
+          "minLength": 0,
+          "default": "/data",
+          "additionalProperties": false
+        },
+        "textContentTypes": {
+          "id": "#textContentTypes",
+          "type": "array",
+          "title": "Content-Type Whitelist",
+          "description": "Content-Type whitelist for filtering responses. All responses with a content type matched here will be allowed.",
+          "name": "",
+          "minItems": 0,
+          "uniqueItems": false,
+          "additionalProperties": false,
+          "items": [
+            {
+              "id": "#0",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/cmd",
+              "additionalProperties": false
+            },
+            {
+              "id": "#1",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/css",
+              "additionalProperties": false
+            },
+            {
+              "id": "#2",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/csv",
+              "additionalProperties": false
+            },
+            {
+              "id": "#3",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/example",
+              "additionalProperties": false
+            },
+            {
+              "id": "#4",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/html",
+              "additionalProperties": false
+            },
+            {
+              "id": "#5",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/javascript",
+              "additionalProperties": false
+            },
+            {
+              "id": "#6",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/plain",
+              "additionalProperties": false
+            },
+            {
+              "id": "#7",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/rtf",
+              "additionalProperties": false
+            },
+            {
+              "id": "#8",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/vcard",
+              "additionalProperties": false
+            },
+            {
+              "id": "#9",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/vnd.abc",
+              "additionalProperties": false
+            },
+            {
+              "id": "#10",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/xml",
+              "additionalProperties": false
+            },
+            {
+              "id": "#11",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/x-jquery-tmpl",
+              "additionalProperties": false
+            },
+            {
+              "id": "#12",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-javascript:",
+              "additionalProperties": false
+            },
+            {
+              "id": "#13",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-latex",
+              "additionalProperties": false
+            },
+            {
+              "id": "#14",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/x-markdown",
+              "additionalProperties": false
+            },
+            {
+              "id": "#15",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-www-form-urlencoded",
+              "additionalProperties": false
+            },
+            {
+              "id": "#16",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "multipart/mixed",
+              "additionalProperties": false
+            },
+            {
+              "id": "#17",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "multipart/alternative",
+              "additionalProperties": false
+            },
+            {
+              "id": "#18",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "multipart/related",
+              "additionalProperties": false
+            },
+            {
+              "id": "#19",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "multipart/form-data",
+              "additionalProperties": false
+            },
+            {
+              "id": "#20",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "multipart/signed",
+              "additionalProperties": false
+            },
+            {
+              "id": "#21",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "multipart/encrypted",
+              "additionalProperties": false
+            },
+            {
+              "id": "#22",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "multipart/example",
+              "additionalProperties": false
+            },
+            {
+              "id": "#23",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/json",
+              "additionalProperties": false
+            },
+            {
+              "id": "#24",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/javascript",
+              "additionalProperties": false
+            },
+            {
+              "id": "#25",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/atom+xml",
+              "additionalProperties": false
+            },
+            {
+              "id": "#26",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/dart",
+              "additionalProperties": false
+            },
+            {
+              "id": "#27",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/ecmascript",
+              "additionalProperties": false
+            },
+            {
+              "id": "#28",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/xhtml+xml",
+              "additionalProperties": false
+            },
+            {
+              "id": "#29",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/xml",
+              "additionalProperties": false
+            },
+            {
+              "id": "#30",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/postscript",
+              "additionalProperties": false
+            },
+            {
+              "id": "#31",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/rss+xml",
+              "additionalProperties": false
+            },
+            {
+              "id": "#32",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/soap+xml",
+              "additionalProperties": false
+            },
+            {
+              "id": "#33",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/xml-dtd",
+              "additionalProperties": false
+            }
+          ],
+        },
+        "binContentTypes": {
+          "id": "#binContentTypes",
+          "type": "array",
+          "title": "Content-Type Blacklist",
+          "description": "Disallowed Content-Types for response filters",
+          "name": "",
+          "minItems": 0,
+          "uniqueItems": false,
+          "additionalProperties": false,
+          "items": [
+            {
+              "id": "#0",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "image/gif",
+              "additionalProperties": false
+            },
+            {
+              "id": "#1",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "image/jpeg",
+              "additionalProperties": false
+            },
+            {
+              "id": "#2",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "image/pjpeg",
+              "additionalProperties": false
+            },
+            {
+              "id": "#3",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "image/png",
+              "additionalProperties": false
+            },
+            {
+              "id": "#4",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "image/webp",
+              "additionalProperties": false
+            },
+            {
+              "id": "#5",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "image/vnd.djvu",
+              "additionalProperties": false
+            },
+            {
+              "id": "#6",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/basic",
+              "additionalProperties": false
+            },
+            {
+              "id": "#7",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/L24",
+              "additionalProperties": false
+            },
+            {
+              "id": "#8",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/mp4",
+              "additionalProperties": false
+            },
+            {
+              "id": "#9",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/mpeg",
+              "additionalProperties": false
+            },
+            {
+              "id": "#10",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/ogg",
+              "additionalProperties": false
+            },
+            {
+              "id": "#11",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/opus",
+              "additionalProperties": false
+            },
+            {
+              "id": "#12",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/vorbis",
+              "additionalProperties": false
+            },
+            {
+              "id": "#13",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/vnd.rn-realaudio",
+              "additionalProperties": false
+            },
+            {
+              "id": "#14",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/vnd.wave",
+              "additionalProperties": false
+            },
+            {
+              "id": "#15",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/webm",
+              "additionalProperties": false
+            },
+            {
+              "id": "#16",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/example",
+              "additionalProperties": false
+            },
+            {
+              "id": "#17",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "video/avi",
+              "additionalProperties": false
+            },
+            {
+              "id": "#18",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "video/example",
+              "additionalProperties": false
+            },
+            {
+              "id": "#19",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "video/mpeg",
+              "additionalProperties": false
+            },
+            {
+              "id": "#20",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "video/mp4",
+              "additionalProperties": false
+            },
+            {
+              "id": "#21",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "video/ogg",
+              "additionalProperties": false
+            },
+            {
+              "id": "#22",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "video/quicktime",
+              "additionalProperties": false
+            },
+            {
+              "id": "#23",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "video/webm",
+              "additionalProperties": false
+            },
+            {
+              "id": "#24",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "video/x-matroska",
+              "additionalProperties": false
+            },
+            {
+              "id": "#25",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "video/x-ms-wmv",
+              "additionalProperties": false
+            },
+            {
+              "id": "#26",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "video/x-flv",
+              "additionalProperties": false
+            },
+            {
+              "id": "#27",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-7z-compressed",
+              "additionalProperties": false
+            },
+            {
+              "id": "#28",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-chrome-extension",
+              "additionalProperties": false
+            },
+            {
+              "id": "#29",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-dvi",
+              "additionalProperties": false
+            },
+            {
+              "id": "#30",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-font-ttf",
+              "additionalProperties": false
+            },
+            {
+              "id": "#31",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-mpegURL",
+              "additionalProperties": false
+            },
+            {
+              "id": "#32",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-rar-compressed",
+              "additionalProperties": false
+            },
+            {
+              "id": "#33",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-shockwave-flash",
+              "additionalProperties": false
+            },
+            {
+              "id": "#34",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-stuffit",
+              "additionalProperties": false
+            },
+            {
+              "id": "#35",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-tar",
+              "additionalProperties": false
+            },
+            {
+              "id": "#36",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-xpinstall",
+              "additionalProperties": false
+            },
+            {
+              "id": "#37",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/x-aac",
+              "additionalProperties": false
+            },
+            {
+              "id": "#38",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "audio/x-caf",
+              "additionalProperties": false
+            },
+            {
+              "id": "#39",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "image/x-xcf",
+              "additionalProperties": false
+            },
+            {
+              "id": "#40",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "text/x-gwt-rpc",
+              "additionalProperties": false
+            },
+            {
+              "id": "#41",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-pkcs12",
+              "additionalProperties": false
+            },
+            {
+              "id": "#42",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/EDI-X12",
+              "additionalProperties": false
+            },
+            {
+              "id": "#43",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/EDIFACT",
+              "additionalProperties": false
+            },
+            {
+              "id": "#44",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/octet-stream",
+              "additionalProperties": false
+            },
+            {
+              "id": "#45",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/ogg",
+              "additionalProperties": false
+            },
+            {
+              "id": "#46",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/pdf",
+              "additionalProperties": false
+            },
+            {
+              "id": "#47",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/rdf+xml",
+              "additionalProperties": false
+            },
+            {
+              "id": "#48",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/font-woff",
+              "additionalProperties": false
+            },
+            {
+              "id": "#49",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/xop+xml",
+              "additionalProperties": false
+            },
+            {
+              "id": "#50",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/zip",
+              "additionalProperties": false
+            },
+            {
+              "id": "#51",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/gzip",
+              "additionalProperties": false
+            },
+            {
+              "id": "#52",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/example",
+              "additionalProperties": false
+            },
+            {
+              "id": "#53",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-nacl",
+              "additionalProperties": false
+            },
+            {
+              "id": "#54",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "application/x-pnacl",
+              "additionalProperties": false
+            }
+          ],
+        }
+      },
+      "required": [
+        "maxBytesUnknownType",
+        "dataDir",
+        "textContentTypes",
+        "binContentTypes"
+      ]
+    },
+    "API": {
+      "id": "#API",
+      "type": "object",
+      "title": "",
+      "description": "",
+      "name": "",
+      "additionalProperties": false,
+      "properties": {
+        "host": {
+          "id": "#host",
+          "type": "string",
+          "title": "API Hostname/IP",
+          "description": "Hostname/IP to run the main API component under. Will be populated out to all other services at runtime.",
+          "name": "",
+          "minLength": 0,
+          "default": "127.0.0.1",
+          "additionalProperties": false
+        },
+        "port": {
+          "id": "#port",
+          "type": "string",
+          "title": "API Port",
+          "description": "Port to run the main API component under. Will be populated out to all other services at runtime.",
+          "name": "",
+          "minLength": 0,
+          "default": "9080",
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "host",
+        "port"
+      ]
+    },
+    "IDE": {
+      "id": "#IDE",
+      "type": "object",
+      "title": "",
+      "description": "",
+      "name": "",
+      "additionalProperties": false,
+      "properties": {
+        "host": {
+          "id": "#host",
+          "type": "string",
+          "title": "IDE Hostname/IP",
+          "description": "Hostname/IP to run the cloud9 IDE component under. Will be populated out to all other services at runtime.",
+          "name": "",
+          "minLength": 0,
+          "default": "127.0.0.1",
+          "additionalProperties": false
+        },
+        "port": {
+          "id": "#port",
+          "type": "string",
+          "title": "IDE Port",
+          "description": "Port to run the cloud9 IDE component under. Will be populated out to all other services at runtime.",
+          "name": "",
+          "minLength": 0,
+          "default": "9085",
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "host",
+        "port"
+      ]
+    },
+    "DB": {
+      "id": "#DB",
+      "type": "object",
+      "title": "",
+      "description": "",
+      "name": "",
+      "additionalProperties": false,
+      "properties": {
+        "host": {
+          "id": "#host",
+          "type": "string",
+          "title": "Database Hostname/IP",
+          "description": "Hostname/IP to run the Database component under. Will be populated out to all other services at runtime.",
+          "name": "",
+          "minLength": 0,
+          "default": "127.0.0.1",
+          "additionalProperties": false
+        },
+        "port": {
+          "id": "#port",
+          "type": "string",
+          "title": "Database Port",
+          "description": "Port to run the Database component under. Will be populated out to all other services at runtime.",
+          "name": "",
+          "minLength": 0,
+          "default": "8085",
+          "additionalProperties": false
+        },
+        "type": {
+          "id": "#type",
+          "type": "string",
+          "title": "",
+          "description": "",
+          "name": "",
+          "minLength": 0,
+          "default": "local",
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "host",
+        "port",
+        "type"
+      ]
+    },
+    "GUI": {
+      "id": "#GUI",
+      "type": "object",
+      "title": "",
+      "description": "",
+      "name": "",
+      "additionalProperties": false,
+      "properties": {
+        "host": {
+          "id": "#host",
+          "type": "string",
+          "title": "GUI Hostname/IP",
+          "description": "Hostname/IP to run the GUI Frontend component under. Will be populated out to all other services at runtime.",
+          "name": "",
+          "minLength": 0,
+          "default": "127.0.0.1",
+          "additionalProperties": false
+        },
+        "port": {
+          "id": "#port",
+          "type": "string",
+          "title": "GUI Port",
+          "description": "Port to run the GUI Frontend component under. Will be populated out to all other services at runtime.",
+          "name": "",
+          "minLength": 0,
+          "default": "3000",
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "host",
+        "port"
+      ]
+    },
+    "user": {
+      "id": "#user",
+      "type": "object",
+      "title": "",
+      "description": "",
+      "name": "",
+      "additionalProperties": false,
+      "properties": {
+        "username": {
+          "id": "#username",
+          "type": "string",
+          "title": "",
+          "description": "",
+          "name": "",
+          "minLength": 0,
+          "default": "ZeroCool",
+          "additionalProperties": false
+        },
+        "authToken": {
+          "id": "#authToken",
+          "type": "string",
+          "title": "authToken",
+          "description": "Secret value required to authenticate to various components.",
+          "name": "",
+          "minLength": 10,
+          "default": "BreakingTheGibson",
+          "additionalProperties": false
+        },
+        "session": {
+          "id": "#session",
+          "type": "object",
+          "title": "",
+          "description": "",
+          "name": "",
+          "additionalProperties": false,
+          "properties": {
+            "project": {
+              "id": "#project",
+              "type": "string",
+              "title": "",
+              "description": "",
+              "name": "",
+              "minLength": 0,
+              "default": "proxyHistory",
+              "additionalProperties": false
+            },
+            "selectedItem": {
+              "id": "#selectedItem",
+              "type": "string",
+              "title": "",
+              "description": "Currently selected history item.",
+              "name": "",
+              "minLength": 0,
+              "default": "0",
+              "additionalProperties": false
+            },
+            "profile": {
+              "id": "#profile",
+              "type": "string",
+              "title": "",
+              "description": "Currently active profile.",
+              "name": "",
+              "minLength": 0,
+              "default": "Logger",
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "project",
+            "selectedItem",
+            "profile"
+          ]
+        },
+        "projects": {
+          "id": "#projects",
+          "type": "array",
+          "title": "",
+          "description": "A list of available projects. A project is a namespace for database info.",
+          "name": "",
+          "minItems": 0,
+          "uniqueItems": false,
+          "additionalProperties": false,
+          "items": {}
+        },
+        "profiles": {
+          "id": "#profiles",
+          "type": "array",
+          "title": "",
+          "description": "A list of available profiles.",
+          "name": "",
+          "minItems": 0,
+          "uniqueItems": false,
+          "additionalProperties": false,
+          "items": {}
+        }
+      },
+      "required": [
+        "username",
+        "authToken",
+        "session",
+        "projects",
+        "profiles"
+      ]
+    },
+    "id": {
+      "id": "#id",
+      "type": "string",
+      "title": "",
+      "description": "",
+      "name": "",
+      "minLength": 0,
+      "default": "1",
+      "additionalProperties": false
+    },
+    "firstRun": {
+      "id": "#firstRun",
+      "type": "string",
+      "title": "",
+      "description": "Used to indicate that this is the first run of the program, and should display tutorial/startup information.",
+      "name": "",
+      "minLength": 0,
+      "default": "true",
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "general",
+    "API",
+    "IDE",
+    "DB",
+    "GUI",
+    "user",
+    "id",
+    "firstRun"
+  ]
+}

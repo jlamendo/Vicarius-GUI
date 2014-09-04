@@ -1,0 +1,13 @@
+section.page.configuration
+    .container.serverSettingsContainer
+        form.configForm(id='configForm')
+            .panel
+                .panel-heading
+                    h3.panel-title Response Filtering Options:
+                  .panel-body
+                    | Configuration options for response filtering. Content-Types placed in the whitelist will always be passed through the chain, while those placed in the blacklist will always be skipped and will not appear in the History tab. This is to avoid potentially slow parsing of things like images, etc, which can cause problems with a system designated for processing text. Unknown Content-Types, or responses without a Content-Type, will be accepted if the size of the response is lower than the set Max Unknown Size option.
+                    hr
+                    .row.form-Filtering(role='Response Filtering')
+            input(type='submit', method='POST', action='POST')
+
+

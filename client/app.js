@@ -18,7 +18,7 @@ module.exports = {
     // this is the the whole app initter
     blastoff: function () {
         var self = window.app = this;
-        window.serverSettings = new serverSettings();
+        window.serverSettings = new serverSettings(window.serverSettingsJSON);
         window.serverSettingsCollection = new serverSettingsCollection();
         window.serverSettingsCollection.add(window.serverSettingsJSON,{merge:true});
         window.conf = function(){
