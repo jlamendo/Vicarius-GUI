@@ -8,25 +8,70 @@ body
     .navbar.navbar-default.navMenu(id='rootNavbar')
             ul.nav.navbar-nav
               li
-                a(href='Configuration') Configuration
+                a.navItem(href='Configuration') Configuration
               li
-                a(href='IDE') IDE
+                a.navItem(href='IDE') IDE
               li
-                a(href='History') History
+                a.navItem(href='History') History
+              li
+                .spacer &nbsp;
+              li.selectBox
+                select.selectpacker.profiles(data-style='btn-info btn-xs', data-show-icon='false', data-width='8.5em')
+                  option(data-content="<p class='hoverEditContainer'><input role='createProfileInput' id='createProfileInput' class='editInput dropDown' type='text' placeholder='Create'><span class='hoverEditChild dropDown' id='selectedProfile'><i class='fa fa-plus'></i></span></p>")
+              li
+                .spacer &nbsp;
+              li.selectBox
+                select.selectpacker.projects(data-style='btn-info btn-xs', data-show-icon='false', data-width='8.5em')
+                  option(data-content="<p class='hoverEditContainer'><input role='createProjectInput' id='createProjectInput' class='editInput dropDown' type='text' placeholder='Create'><span class='hoverEditChild dropDown' id='selectedProject'><i class='fa fa-plus'></i></span></p>")
+              li
+                .spacer &nbsp;
+              li
+                button.btn-info.btn-xs.refresh
+                  i.fa.fa-refresh(id='refreshIcon')
+                button.btn-info.btn-xs.playPause
+                  i.fa.fa-pause(id='playPauseIcon')
     li.httpExchangeLabels.list-group-item.rootContainer(role='rootContainer', id='rootContainer')
-      p.httpExchangeLabel.referenceIdHeader ID#
+      p.httpExchangeLabel.referenceIdHeader
+        a.arrow-up(href='', onclick="window.app.sortList.sort('referenceId',{order: 'asc'})")
+        a.arrow-down(href='', onclick="window.app.sortList.sort('referenceId',{order: 'desc'})")
+        input.editInput(type='text', placeholder='Filter', oninput="window.app.sortList.fuzzySearch.search(this.value, ['referenceId']);")
+        a.editLabel.hoverEditChild.sortLabel ID#
       div.vr
-      p.httpExchangeLabel.hostHeader Host
+      p.httpExchangeLabel.hostHeader
+        a.arrow-up(href='', onclick="window.app.sortList.sort('host',{order: 'asc'})")
+        a.arrow-down(href='', onclick="window.app.sortList.sort('host',{order: 'desc'})")
+        input.editInput(type='text', placeholder='Filter', oninput="window.app.sortList.fuzzySearch.search(this.value, ['host']);console.log(this.value)")
+        a.editLabel.hoverEditChild.sortLabel Host
       div.vr
-      p.httpExchangeLabel.routeHeader Route
+      p.httpExchangeLabel.routeHeader
+        a.arrow-up(href='', onclick="window.app.sortList.sort('route',{order: 'asc'})")
+        a.arrow-down(href='', onclick="window.app.sortList.sort('route',{order: 'desc'})")
+        input.editInput(type='text', placeholder='Filter', oninput="window.app.sortList.fuzzySearch.search(this.value, ['route']);")
+        a.editLabel.hoverEditChild.sortLabel Route
       div.vr
-      p.httpExchangeLabel.methodHeader Method
+      p.httpExchangeLabel.methodHeader
+        a.arrow-up(href='', onclick="window.app.sortList.sort('method',{order: 'asc'})")
+        a.arrow-down(href='', onclick="window.app.sortList.sort('method',{order: 'desc'})")
+        input.editInput(type='text', placeholder='Filter', oninput="window.app.sortList.fuzzySearch.search(this.value, ['method']);")
+        a.editLabel.hoverEditChild.sortLabel Method
       div.vr
-      p.httpExchangeLabel.statusCodeHeader Status
+      p.httpExchangeLabel.statusCodeHeader
+        a.arrow-up(href='', onclick="window.app.sortList.sort('statusCode',{order: 'asc'})")
+        a.arrow-down(href='', onclick="window.app.sortList.sort('statusCode',{order: 'desc'})")
+        input.editInput(type='text', placeholder='Filter', oninput="window.app.sortList.fuzzySearch.search(this.value, ['statusCode']);")
+        a.editLabel.hoverEditChild.sortLabel Status
       div.vr
-      p.httpExchangeLabel.responseLengthHeader Length
+      p.httpExchangeLabel.responseLengthHeader
+        a.arrow-up(href='', onclick="window.app.sortList.sort('responseLength',{order: 'asc'})")
+        a.arrow-down(href='', onclick="window.app.sortList.sort('responseLength',{order: 'desc'})")
+        input.editInput(type='text', placeholder='Filter', oninput="window.app.sortList.fuzzySearch.search(this.value, ['responseLength']);")
+        a.editLabel.hoverEditChild.sortLabel Length
       div.vr
-      p.httpExchangeLabel.responseTimeHeader Time
+      p.httpExchangeLabel.responseTimeHeader
+        a.arrow-up(href='', onclick="window.app.sortList.sort('responseTime',{order: 'asc'})")
+        a.arrow-down(href='', onclick="window.app.sortList.sort('responseTime',{order: 'desc'})")
+        input.editInput(type='text', placeholder='Filter', oninput="window.app.sortList.fuzzySearch.search(this.value, ['responseTime']);")
+        a.editLabel.hoverEditChild.sortLabel Time
   .container
     main.main(role="page-container")
 

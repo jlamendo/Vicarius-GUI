@@ -39,10 +39,11 @@ module.exports = {
         // order you provide them. So for example, if you're using jQuery make sure
         // you list any plugins after jQuery itself.
         libraries: [
+            appDir + '/libraries/zepto.js',
             appDir + '/libraries/jquery.min.js',
             appDir + '/libraries/bootstrap.min.js',
             appDir + '/libraries/jquery.bootstrap-autohidingnavbar.js',
-            appDir + '/libraries/zepto.js',
+            appDir + '/libraries/jquery.dform.min.js',
             appDir + '/libraries/serverSettings.js',
             appDir + '/libraries/prism.js',
         ],
@@ -50,10 +51,12 @@ module.exports = {
         stylesheets: [
             cssDir + '/normalize.css',
             cssDir + '/bootstrap.min.css',
+            cssDir + '/bootstrap-select.min.css',
             cssDir + '/prism.css',
             cssDir + '/vicarius.css',
             cssDir + '/app.css',
         ],
+
         beforeBuildJS: function () {
             // This re-builds our template files from jade each time the app's main
             // js file is requested. Which means you can seamlessly change jade and
